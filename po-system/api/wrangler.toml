@@ -1,0 +1,31 @@
+name = "po-system-api"
+main = "src/index.ts"
+compatibility_date = "2024-07-18"
+compatibility_flags = ["nodejs_compat"]
+
+[vars]
+ENVIRONMENT = "production"
+
+# D1 Database binding
+[[d1_databases]]
+binding = "DB"
+database_name = "po-system-db"
+database_id = "YOUR_D1_DATABASE_ID"   # Replace after: wrangler d1 create po-system-db
+
+# R2 Storage binding
+[[r2_buckets]]
+binding = "STORAGE"
+bucket_name = "po-documents"
+
+# KV for sessions/cache
+[[kv_namespaces]]
+binding = "KV"
+id = "YOUR_KV_NAMESPACE_ID"           # Replace after: wrangler kv:namespace create po-kv
+
+[secrets]
+# Set via: wrangler secret put CLERK_SECRET_KEY
+# Set via: wrangler secret put RESEND_API_KEY
+# Set via: wrangler secret put JWT_SECRET
+
+[build]
+command = "npm run build"

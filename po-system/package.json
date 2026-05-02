@@ -1,0 +1,11 @@
+{
+  "name": "po-system",
+  "private": true,
+  "workspaces": ["frontend", "api"],
+  "scripts": {
+    "dev:frontend": "cd frontend && npm run dev",
+    "dev:api": "cd api && npm run dev",
+    "build": "cd frontend && npm run build",
+    "deploy:api": "cd api && npm run deploy"
+  }
+}
