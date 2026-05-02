@@ -1,0 +1,11 @@
+{
+  "name": "po-system-railway",
+  "private": true,
+  "scripts": {
+    "dev:api":      "cd api && npm run dev",
+    "dev:frontend": "cd frontend && npm run dev",
+    "install:all":  "cd api && npm install && cd ../frontend && npm install",
+    "db:init":      "cd api && npm run db:init",
+    "db:seed":      "cd api && npm run db:seed"
+  }
+}
